@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     console.log(userId)
-    Axios.post('https://crud-application89643.herokuapp.com/api/get', {
+    Axios.post('http://localhost:3001/api/get', {
       userId: userId 
     }).then((response) => {
       // var newMovieList = [];
@@ -42,7 +42,7 @@ function App() {
   }, [userId]);
 
   const submitReview = () => {
-    Axios.post('https://crud-application89643.herokuapp.com/api/insert', {
+    Axios.post('http://localhost:3001/api/insert', {
       userId: userId,
       newName: movieName,
       newReview: movieReview, 
@@ -56,7 +56,7 @@ function App() {
 
   const deleteReview = (movieName) => {
     console.log(movieName);
-    Axios.delete(`https://crud-application89643.herokuapp.com/api/delete`, {
+    Axios.delete(`http://localhost:3001/api/delete`, {
       data: {
         movieName: movieName,
         userId: userId,
@@ -68,7 +68,7 @@ function App() {
   };
 
   const updateReview = (movieName) => {
-    Axios.put("https://crud-application89643.herokuapp.com/api/update", {
+    Axios.put("http://localhost:3001/api/update", {
       movieName: movieName,
       newReview: newReview,
       userId: userId,
